@@ -5,11 +5,11 @@ import { Action } from "rxjs/internal/scheduler/Action";
 import { todoActions } from "../actions";
 
 export interface State{
-    isloading:boolean;
+    isloading:boolean |undefined;
     error: HttpErrorResponse | undefined;
 }
 export const initialState : State={
-    isloading : false,
+    isloading : undefined,
     error:undefined
 }
 
@@ -28,7 +28,7 @@ export const reducer=createReducer(initialState,
                         
         }
     }),
-    on(todoActions.fetchToDoError,(state,action)=>{
+    on(todoActions.fetchToDoSuccess,(state)=>{
         return{
             ...state,
             isloading:false,

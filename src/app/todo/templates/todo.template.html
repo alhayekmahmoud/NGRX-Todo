@@ -1,11 +1,11 @@
 <h1>TODOS</h1>
-<ng-container *ngIf="isLoading$|async as loading">
+<ng-container *ngIf="isloading$|async as loading">
     please wait loading....
 
 </ng-container>
 
 <ng-container *ngIf="entities$|async as entities">
-    <b *ngFor="let item of entities">{{item.titlt}}</b>
+    <p *ngFor="let item of entities">{{item.title}}</p>
 
 </ng-container>
 
